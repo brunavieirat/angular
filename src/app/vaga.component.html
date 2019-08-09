@@ -1,0 +1,134 @@
+<!-- salario e vaga, data de comeco , urgencia nela temporal, treinamento qual daria, como eh o onboarding da vaga, Desenvolveria a pessoa? como? quanto pagaria?quanto tempo. Dev pra indisincrasia , metie ou pra tarefa em geral, horizonte de hold, horizonte de promocao e progressao, horizonte de carreira.   -->
+<!-- questionario especifico de attitutes pros candidatos, paga mais e tem isso envia pra els dado resposta vc recebecham pra reuniao. Eh transparente pra mim, pra ver discminaoca ou nao.  Quantidade de hora extra e overload de work, overwork  -->
+
+<!-- lista de candidatos,compinenete: 4 blocos, cada um com um perfil componente altos tarqgets
+compoennet tranferabel skills people (nao exp no setor)
+compoenent treinavel
+componente meh 
+cards pra cada pessoa, colapsavel com todas as infos dele e botao de contactar do lado. (limite de contatos por grupo) paga tem mais
+ -->
+
+<!-- Na hora de perencher a vaga por perfil, Add perfil real das pessaos da vaga, e quantodade de tempo, pressao e automoia, relacao de poder com essas pessaoas, pra ajudar a acahr fit facil ou nao da vaga, e valorizar quem eh mais imporante se dar bem e como, pares q tem q funcionar/e o que eh mais importante tradeoff da relacao da pessoa ou o perfil do canditato printar na hrora esses fits-->
+
+<h1> Criar Nova Vaga: </h1>
+link pro form
+
+<form [formGroup]="form" (ngSubmit)="updateTask()">  
+<div class="row">
+    <div class="form-group col-md-4">
+      <label for="title" class="control-label">Vaga</label>
+      <input type="text" formControlName="title" id="title" class="form-control" >
+    </div>
+  </div>   
+<div class="row">
+    <div class="form-group col-md-4">
+      <label for="title" class="control-label">Salario maximo</label>
+      <input type="text" formControlName="salariomax" id="salariomax" class="form-control" >
+    </div>
+
+<div class="form-group col-md-4">
+      <label for="title" class="control-label">Bonificacao</label>
+      <input type="text" formControlName="bonificacao" id="bonificacao" class="form-control" >
+    </div>
+</div>
+
+<div class="row">
+<div class="form-check form-check-inline">
+  <input 
+  formControlName="vr"
+  class="form-check-input" type="checkbox" id="vr" value="option1">
+  <label class="form-check-label" for="vr">VR</label>
+</div>
+<div class="form-check form-check-inline">
+  <input 
+  formControlName="va"
+  class="form-check-input" type="checkbox" id="va" value="option2">
+  <label class="form-check-label" for="va">VA</label>
+</div>
+<div class="form-check form-check-inline">
+  <input 
+  formControlName="creche"
+  class="form-check-input" type="checkbox" id="creche" value="option3" disabled>
+  <label class="form-check-label" for="creche"> Creche </label>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-xs-12 col-4 col-md-4 form-group">
+   <label for="title" class="control-label">Data ideal de comeco</label>
+    <input 
+          formControlName="dataentry"
+          type="text"
+           placeholder="Datepicker"
+           class="form-control"
+           bsDatepicker>
+  </div>
+    <div class="form-group form-check col-md-1">
+    <input type="checkbox" class="form-check-input" formControlName="urgencia" id="urgencia">
+    <label for="urgencia" class="form-check-label">Urgencia?</label>
+  </div>  
+  </div> 
+
+ <div class="row">
+    <div class="form-group col-md-4">
+      <label for="horas" class="control-label">Horas Semanais/dia</label>
+      <input type="text" formControlName="horas" id="horas" class="form-control" >
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="horasextra" class="control-label">Horas maximas de hora extra semana</label>
+      <input type="text" formControlName="horasextra" id="horasextra" class="form-control" >
+    </div>
+    </div>  
+
+<div class="row">
+    <div class="form-group col-md-4">
+      <label for="diasviajem" class="control-label"> Dias fora em viagem mes</label>
+      <input type="text" formControlName="diasviajem" id="diasviajem" class="form-control" >
+    </div>
+
+  
+    <div class="form-group form-check col-md-1">
+    <input type="checkbox" class="form-check-input" formControlName="overwork" id="moreorlessoverwork">
+    <label for="overwork" class="form-check-label">Overwork?</label>
+  </div>  
+  </div>
+   <pre>{{ form.value | json }}</pre>
+</form>
+
+
+  <!-- come ca p putro -->
+
+<h1> Processo Seletivo em Aberto: </h1>
+
+
+<div *ngFor="let vaga of vaga"class="card bg" style="">
+  <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+  <h5 class="card-header"> 
+    {{ vaga.id }} 
+    90% Geral, 95% Afinidade , 80% Competencia,  35% Motivado   
+    <button class="btn btn-primary ">Teste Atitudes</button>
+    <button class="btn btn-success">Convidar</button></h5>
+  <div class="card-body">
+    <h5 class="card-title">{{ vaga.id }}</h5>
+    <p class="card-text">{{ vaga.title }}</p>
+    <button class="btn btn-info">Detalhes</button>
+      <button class="btn btn-danger">Excluir</button>
+  </div>
+</div>
+
+<div *ngFor="let vaga of vaga"class="card bg" style="">
+  <h5 class="card-header"> 
+    {{ vaga.id }} 
+    90% Geral, 95% Afinidade , 80% Competencia,  35% Motivado - Data reuniao: 25/3 , 17:30
+  <div class="card-body">
+    <h5 class="card-title">formulario de completar especificos</h5>
+    <p class="card-text">Toda a ficha do cara de CV, abas com resposta de cada um dos prencehdores de questionario pra ver o q farlam, isso pra n fases repetido. Se rejeitado fica cinza/vermelho inabrivel, antes define euantas fases, perguntas de cada fase e quem vai entrevistar em cada fase, e se juntos ou separados. </p>
+    <button class="btn btn-success">Aprovar proxima fase</button>
+      <button class="btn btn-danger">Rejeitar</button>
+</div>
+
+<div class="container">
+ <tarefavaga></tarefavaga>
+</div> 

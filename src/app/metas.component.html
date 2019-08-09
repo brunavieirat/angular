@@ -1,0 +1,488 @@
+
+
+<form [formGroup]="form" (ngSubmit)="updateTask()">  
+  <div class="input-group ">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+    formControlName="metas" 
+    >Escolher</button>
+    <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Esse ano</a>
+    <a class="dropdown-item" href="#">Proximos 5 anos</a>
+    <a class="dropdown-item" href="#">Second job/hobbyes</a>
+    </div>
+  </div>
+  
+<h1> Material</h1>
+<h2> Salario </h2>
+ <div class="row">
+   <div class="form-check form-check-inline">
+  <input 
+  formControlName="starsalariominimo"
+  class="form-check-input" type="checkbox" id="vr" value="option1">
+</div>
+    <div class="form-group ">
+      <label for="title" class="control-label">Salario minimo</label>
+      <input type="text" formControlName="salariominimo" id="salariominimo" class="form-control" >
+    </div>
+    <div class="form-group ">
+        <label for="title" class="control-label">Salario reflete numero</label>
+      <input type="range" formControlName="likedeslike" id="likedeslike" class="custom-range"> 
+ </div>
+  <div class="form-check form-check-inline">
+  <input 
+  formControlName="starsalariogoal"
+  class="form-check-input" type="checkbox" id="vr" value="option1">
+</div>
+  <div class="form-group ">
+      <label for="salariogoal" class="control-label">Salario desejado esse ano /meta/12 meses</label>
+      <input type="text" formControlName="salariogoal" id="salariogoal" class="form-control" >
+    </div>
+    <div class="form-group ">
+        <label for="title" class="control-label">Salario reflete numero</label>
+      <input type="range" formControlName="likedeslike" id="likedeslike" class="custom-range"> 
+ </div>
+</div>
+
+<h2> Bonus </h2>
+ <div class="row">
+   <div class="form-check form-check-inline">
+  <input 
+  formControlName="starbonus"
+  class="form-check-input" type="checkbox" id="starbonus" value="option1">
+</div>
+<div class="form-group ">
+      <label for="bonuspercentage" class="control-label"> Bonus % salario mes</label>
+      <input type="text" formControlName="bonuspercentage" id="bonuspercentage" class="form-control" >
+    </div>
+    <div class="row">
+   <div class="form-check form-check-inline">
+  <input 
+  formControlName="starmethodbonus"
+  class="form-check-input" type="checkbox" id="starmethodbonus" value="option1">
+</div>
+ <div class="form-group ">
+      <label class="mr-sm-2" for="methodbonus">Metricas de calculo do bonus</label>
+      <select class="custom-select mr-sm-2" id="methodbonus" formControlName="methodbonus">
+        <option selected>Nao quero bonus</option>
+        <option value="1">Individual</option>
+        <option value="2">Equipe</option>
+        <option value="3">Empresa/PLR</option>
+      </select>
+    </div>
+</div>
+</div>
+<h2> Beneficios </h2>
+
+ <div class="row">
+ <table class="table col-md-3">
+  <thead>
+    <th> Beneficios</th> 
+    <th>Preferencia </th>
+  </thead>
+  <tbody>
+    <tr >
+      <td>Alimentacao</td>
+      <td>  
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
+  formControlName="va"
+  >
+  <label class="form-check-label" for="inlineRadio1">Nao tenho interesse</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Nice to have</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Must have!!!</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Show Stopper!!!</label>
+</div>
+      </td>
+    </tr>
+    <tr >
+      <td>Transporte</td>
+      <td>  
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
+  formControlName="vt"
+  >
+  <label class="form-check-label" for="inlineRadio1">Nao tenho interesse</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Nice to have</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Must have!!!</label>
+</div>
+      </td>
+    </tr>
+     <tr >
+      <td>Saude </td>
+      <td>  
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
+  formControlName="vsaude"
+  >
+  <label class="form-check-label" for="inlineRadio1">Nao tenho interesse</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Nice to have</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Must have!!!</label>
+</div>
+      </td>
+    </tr>
+ <tr >
+      <td>Creche</td>
+      <td>  
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
+  formControlName="vcreche"
+  >
+  <label class="form-check-label" for="inlineRadio1">Nao tenho interesse</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Nice to have</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Must have!!!</label>
+</div>
+      </td>
+    </tr>
+ <tr >
+      <td>Outras clica e abre autocompete</td>
+      <td>  
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Nao tenho interesse</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Nice to have</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Must have!!!</label>
+</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div> 
+<!-- 
+Vida (work life) ( vida manda impõem as resteicoes no trabalho, vide mãe ou gosta de morar em xyz, horário livre pra hobby ou etc )
+Geografia distância da casa - done
+Geografia, mudar de cidade -done
+Horário flexível ( banco de horas)
+Quantidade de horas - done
+Horários definido de turno ( horário de entra e sai)
+Tempo de almoço definir - no
+Tem siesta? 
+Temporário ?curta duração -done
+Home office x dias - done
+viajar- done
+   -->
+
+
+   <h1> Work life balance </h1>
+
+   <h1> Geografia </h1>
+<div class="row">
+  <div class="form-check form-check-inline">
+  <input 
+  formControlName="stardistancia"
+  class="form-check-input" type="checkbox" id="stardistancia" value="option1">
+</div>
+    <div class="form-group col-md-4">
+      <label for="enderecocasa" class="control-label">Endereco de casa</label>
+      <input type="text" formControlName="enderecocasa" id="enderecocasa" class="form-control" >
+    </div> 
+   <div class="form-group ">
+        <label for="distanciacasa" class="control-label">Distancia maxima de casa</label>
+      <input type="range" formControlName="distanciacasa" id="distanciacasa" class="custom-range"> 
+ </div>
+  </div>  
+<br>
+  <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="mudarcidade">Mudar de cidade
+</button>
+<div id="mudarcidade" [collapse]="isCollapsed">
+<h1> Mudar de cidade? </h1>
+<div class="row">
+  <div class="form-check form-check-inline">
+  <input 
+  formControlName="starnovacidade"
+  class="form-check-input" type="checkbox" id="starnovacidade" value="option1">
+</div>
+  <div class="form-group col-md-4">
+      <label for="novacidade" class="control-label">Cidade que gostaria de se mudar</label>
+      <input type="text" formControlName="novacidade" id="novacidade" class="form-control" >
+    </div> 
+  <div class="form-group ">
+        <label for="distanciacidade" class="control-label">Distancia maxima daria</label>
+      <input type="range" formControlName="distanciacidade" id="distanciacidade" class="custom-range"> 
+ </div>
+  </div> 
+ </div>
+
+
+   <h1> Horarios </h1>
+
+
+<div class="row">
+  <div class="form-check form-check-inline">
+  <input 
+  formControlName="starhorassemanais"
+  class="form-check-input" type="checkbox" id="starhorassemanais" value="option1">
+</div>
+<div class="form-group ">
+        <label for="horassemanais" class="control-label">Horas semanais</label>
+      <input type="range" formControlName="horassemanais" id="horassemanais" class="custom-range"> 
+ </div>
+  <div class="form-check form-check-inline">
+  <input 
+  formControlName="starhorasextrassemanais"
+  class="form-check-input" type="checkbox" id="starhorasextrassemanais" value="option1">
+</div>
+  <div class="form-group ">
+        <label for="horasextrassemanais" class="control-label"> Horario maximo com hora extra</label>
+      <input type="range" formControlName="horasextrassemanais" id="horasextrassemanais" class="custom-range"> 
+ </div>
+ <div class="form-check form-check-inline">
+  <input 
+  formControlName="startipodecontrato"
+  class="form-check-input" type="checkbox" id="startipodecontrato" value="option1">
+</div>
+<div class="form-check form-check-inline " formControlName="tipodecontrato" >
+<label for="title" class="control-label">Tipo de contrato </label>
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Indeterminado</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Temporario</label>
+</div>
+</div> 
+
+<div class="row">
+  <div class="form-check form-check-inline">
+  <input 
+  formControlName="starinicioturno"
+  class="form-check-input" type="checkbox" id="starinicioturno" value="option1">
+</div>
+  <div class="form-group col-md-4">
+      <label for="title" class="control-label">inicio do turno</label>
+      <timepicker [(ngModel)]="mytimein"></timepicker>
+    </div>
+   <div class="form-check form-check-inline">
+  <input 
+  formControlName="starfimturno"
+  class="form-check-input" type="checkbox" id="starfimturno" value="option1">
+</div> 
+  <div class="form-group col-md-4">
+      <label for="title" class="control-label">fim do turno</label>
+      <timepicker [(ngModel)]="mytimeend"></timepicker  >
+    </div>
+</div> 
+<div class="row">
+   <div class="form-check form-check-inline">
+  <input 
+  formControlName="stardiashomeoffice"
+  class="form-check-input" type="checkbox" id="stardiashomeoffice" value="option1">
+</div> 
+  <div class="form-group col-md-4">
+      <label for="diashomeoffice" class="control-label">Dias de home office semana </label>
+      <input type="text" formControlName="diashomeoffice" id="diashomeoffice" class="form-control" >
+    </div>
+
+
+  </div> 
+<div class="row">
+   <div class="form-check form-check-inline">
+  <input 
+  formControlName="starviagem"
+  class="form-check-input" type="checkbox" id="starviagem" value="option1">
+</div> 
+  <h4>Dias fora em viagem por mes </h4>
+    <div class="form-group col-md-2">
+      <label for="diasmesmaxviagem" class="control-label"> maximo</label>
+      <input type="text" formControlName="diasmesmaxviagem" id="diasmesmaxviagem" class="form-control col-md-2" >
+    </div>
+     <div class="form-group col-md-4">
+      <label for="diasmesminviagem" class="control-label">  minimo</label>
+      <input type="text" formControlName="diasmesminviagem" id="diasmesminviagem" class="form-control col-md-2" >
+    </div>
+  </div>   
+   
+<h1> Social </h1>
+<!-- escala do de baixo?
+Amizade
+Afinidade cultural
+Afinidade mental
+Afinidade de valores 
+Família  -->
+<div class="form-check form-check-inline">
+  <input 
+  formControlName="stargrauinteracaopessoas"
+  class="form-check-input" type="checkbox" id="stargrauinteracaopessoas" value="option1">
+</div>  
+grau de intercao q vc quer ter com humanos
+ <div class="row">
+  <div class="form-check form-check-inline">
+  <input 
+  formControlName="starsocial"
+  class="form-check-input" type="checkbox" id="starsocial" value="option1">
+</div>  
+<div class="form-group ">
+        <label for="rangesocial" class="control-label">Amizade
+Afinidade cultural
+Afinidade mental
+Afinidade de valores 
+Família </label>
+      <input type="range" formControlName="rangesocial" id="rangesocial" class="custom-range"> 
+ </div>
+  </div>
+
+<!-- 
+ <div class="row">
+<div class="form-check form-check-inline">
+<label for="title" class="control-label"> Emprsa de impacto social/ ONG </label>
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Nao tenho interesse</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Nice to have</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Must have!!!</label>
+</div>
+</div> -->
+
+<h1> Desenvolvimento</h1>
+<div class="row">
+  <div class="form-check form-check-inline">
+  <input 
+  formControlName="stardev"
+  class="form-check-input" type="checkbox" id="stardev" value="option1">
+</div>  
+    <div class="form-group ">
+      <label for="devtitle" class="control-label">Competencia/tarefa</label>
+      <input type="text" formControlName="devtitle" id="devtitle" class="form-control" >
+    </div>
+    <div class="input-group ">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+    formControlName="razaodev" >Escolher</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Sou ruim quero melhorar</a>
+      <a class="dropdown-item" href="#">Metie quero desenvolver/purpose vida </a>
+      <a class="dropdown-item" href="#">Milestone pra carreira</a>
+      <a class="dropdown-item" href="#">Quero desenolver meu proprio estilo<</a>
+      <a class="dropdown-item" href="#">acha útil saber/interessanteo<</a>
+      <a class="dropdown-item" href="#">Paixao e hobby pago<</a>
+    </div>
+  </div>
+ </div>
+   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Avançar carreira</a>
+    <a class="dropdown-item" href="#">Quero usar pra vida</a>
+    <a class="dropdown-item" href="#">calling</a>
+    <a class="dropdown-item" href="#">ruim, n tem talento mas quer melhorar </a>
+  </div>
+  </div>
+  autocmplete e botao de adicionair mais, alem de aparecer as que eu fiz no CV
+<h1> Cargo e Carreira </h1>
+<div class="row">
+   <div class="form-check form-check-inline">
+  <input 
+  formControlName="starcarreira"
+  class="form-check-input" type="checkbox" id="starcarreira" value="option1">
+</div>   
+    <div class="form-group ">
+      <label for="carreiratitle" class="control-label"> Cargo/posicao </label>
+      <input type="text" formControlName="carreiratitle" id="carreiratitle" class="form-control" >
+    </div>
+    <div class="form-group ">
+      <label for="razaocarreiratext" class="control-label"> PQ/atitude/mptivcao empres aqgrande ou pequena, mega estrutura corp de cresci,ento ou pula macaco conseguir hj cargo alto </label>
+      <input type="text" formControlName="razaocarreiratext" id="razaocarreiratext" class="form-control" >
+    </div>
+</div>    
+
+<h1> Missao Social</h1>
+<div class="row">
+<!-- <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Nao tenho interesse, to bem benzao</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Empresa grande impacta vida de muitos</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Startup de alto impacto</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Empresa B
+</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">ONG
+</label>
+</div> -->
+ <div class="form-check form-check-inline">
+  <input 
+  formControlName="starmissaosociallevel"
+  class="form-check-input" type="checkbox" id="starmissaosociallevel" value="option1">
+</div>  
+<div class="form-group ">
+        <label for="missaosociallevel" class="control-label">
+          Range dos de cima
+          N tem diferenca
+          Pequena empresa
+          Empresa grande impacta vida de muitos
+          Startup de alto impacto
+          Empresa B
+          ONG
+          </label>
+      <input type="range" formControlName="missaosociallevel" id="missaosociallevel" class="custom-range"> 
+ </div>
+</div>
+ <div class="row"> 
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-success">Salvar</button>
+    </div>
+  </div>
+  </div>  
+ <pre>{{ form.value | json }}</pre>
+</form>
+<!-- treinamento:
+Metodo de treinamento(interno externo , especifico da vaga) / numero de horas/ quem?(apontar empresa ou pessao dentro da empresa tuple de pessoas ( se necessario)/ reais(dinheiro)
+Tolerancia com tempo de learnign curve -->
+<!-- 
+treinamentos que tou disposta a darm na entrada e durante se necessario mas nao obrgatoriamente
+ -->
+
+<!-- 
+Competencias da caereira
+competencia e rpa que quer aprender , Igual ao devdo cv
+Cargo que gostaia de ter, responsabilidae que gostaria de desenvler.( daqui x anos) , proffisao. Tem% na frente q mostra se ele ta na possibilida de ter ou eh irreal
+ -->
+
+<!-- Listagem do meu must have, depis do nice depois do n importa, cada um num esquema de card diferente, mas que vc arast pra rankiar. Nome da coisa com a cor do tipo no tijolo, variavel do lado. na coluna do lado tem o daqui x anos e tbe igualzinho -->
+

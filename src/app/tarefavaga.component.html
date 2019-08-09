@@ -1,0 +1,246 @@
+<!-- salario e vaga, data de comeco , urgencia nela temporal, treinamento qual daria, como eh o onboarding da vaga, Desenvolveria a pessoa? como? quanto pagaria?quanto tempo. Dev pra indisincrasia , metie ou pra tarefa em geral, horizonte de hold, horizonte de promocao e progressao, horizonte de carreira.   -->
+<!-- questionario especifico de attitutes pros candidatos, paga mais e tem isso envia pra els dado resposta vc recebecham pra reuniao. Eh transparente pra mim, pra ver discminaoca ou nao.  Quantidade de hora extra e overload de work, overwork  -->
+
+
+<form [formGroup]="form" (ngSubmit)="updateTask()">
+  <div class="row">
+    <div class="form-group col-md-4">
+      <label for="title" class="control-label">Tarefa</label>
+      <input 
+
+      [(ngModel)]="selected"
+       [typeahead]="tarefa"
+       class="form-control"
+       [readonly]="ng-touched &&!Null "
+       >
+    </div>
+  </div>  
+<!-- formControlName="title" -->
+    <!-- Tempo da atividade -->
+<div class="row">
+<div class="input-group col-md-3">
+    <div class="input-group-prepend">
+      <label for="title" class="control-label">Tempo</label>
+      <button
+      formControlName="tempotypeid"
+       class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">horas por dia</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Horas por Dia</a>
+        <a class="dropdown-item" href="#">% do tempo</a>
+        <a class="dropdown-item" href="#">vezes semana</a>
+        <a class="dropdown-item" href="#">vezes mes</a>
+        <a class="dropdown-item" href="#">vezes ano</a>
+      </div>
+    </div>
+    <input type="text" 
+    formControlName="tempo"
+    class="form-control col-md-1" aria-label="Text input with dropdown button">
+</div>
+
+<!-- Produtividade esperada (troughtput) -->
+<div class="input-group col-md-3">
+  <label for="title" class="control-label">Prod</label>
+  <input type="text" 
+  formControlName="produtividade"
+  class="form-control col-md-1 " aria-label="Text input with dropdown button">
+  <div class="input-group-append">
+    <button formControlName="produtividadetypeid" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Escolher</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Tasks por dia</a>
+      <a class="dropdown-item" href="#">Tasks por hora</a>
+      <a class="dropdown-item" href="#">Tasks por semana</a>
+      <a class="dropdown-item" href="#">Tasks por mes<</a>
+    </div>
+  </div>
+
+<div class="input-group col-md-4 ">
+    <div class="input-group-prepend">
+      <label for="title" class="control-label">Experiencia</label>
+      <button class="btn btn-outline-secondary dropdown-toggle" 
+      formControlName="expiriancerequiredtypeid"
+      type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">horas por dia</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Horas por Dia</a>
+        <a class="dropdown-item" href="#">% do tempo</a>
+        <a class="dropdown-item" href="#">vezes semana</a>
+        <a class="dropdown-item" href="#">vezes mes</a>
+        <a class="dropdown-item" href="#">vezes ano</a>
+      </div>
+    <input type="text" 
+    formControlName="expiriancerequired"
+    class="form-control col-md-1" aria-label="Text input with dropdown button">
+    <label for="likedeslike" class="control-label"> Dificuldade </label>
+      <input 
+      formControlName="expiriancerequireddificulty"
+      type="range" id="expiriancerequireddificulty" min="0" max="6" class="custom-range col-md-2 "> 
+</div>
+</div>
+</div>
+</div>
+
+<!-- skill set normalizado (custa mais) -->
+<div class="row">
+ <div class="form-group col-md-3 ">
+      <label for=" skillset" class="control-label">skill set </label>
+      <input type="range" formControlName="skillset" id="skillset" min="0" max="6" class="custom-range"> 
+ </div>
+
+<div class="row">
+<!-- Importante!! -->
+<div class="form-group form-check col-md-1">
+    <input type="checkbox" class="form-check-input" formControlName="important" id="important">
+    <label for="important" class="form-check-label">star</label>
+  </div>  
+
+<!-- Tem que gostar muito -->
+<div class="form-group form-check col-md-2">
+    <input type="checkbox" class="form-check-input" formControlName="love" id="love">
+    <label for="love" class="form-check-label">Love </label>
+  </div>  
+<!-- Pq tem que gostar disso? core da empresa? valores dela ou pq eh perengue sempre, ou momentaneo? imporrtante e gostar tem limite de estrela  -->
+
+<!-- Burocratica? -->
+<div class="form-group form-check col-md-2">
+    <input type="checkbox" class="form-check-input" formControlName="burocratic" id="burocratic">
+    <label for="burocratic" class="form-check-label">Bureau?</label>
+  </div>  
+<!-- certificado? -->
+<div class="btn-group-toggle col-md-3" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input 
+    formControlName="cert"
+    type="checkbox" checked autocomplete="off"> Cert
+  </label>
+</div>
+
+<!-- Modal, Quais certificaoes ela e intitucioes certificadoras que ela acha  valida e acha boa, pontua  -->
+<!-- tem teste especifico pra essa task? eh deles? eu aplico?  -->
+
+
+<!-- Resultado dela muito importante pra empresa, visao, psicologico,marketero, visibilidade e pressao na entrega (sempre ou curto prazo) -->
+<div class="form-group form-check col-md-2">
+    <input type="checkbox" class="form-check-input" formControlName="visibility" id="visibility">
+    <label for="visibility" class="form-check-label">visivel</label>
+  </div>  
+<!-- indiosincratica, quem vai ensinar e qual a toleranc ado learnign curve, quanto tempo de esinar -->
+<div class="form-group form-check col-md-2">
+    <input type="checkbox" class="form-check-input" formControlName="indiosincratic" id="indiosincratic">
+    <label for="indiosincratic" class="form-check-label">indio</label>
+  </div>  
+
+<!-- Desenvolveria a pessoa? como? quanto gastaria?quanto tempo -->
+<div class="btn-group-toggle col-md-3" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="checkbox" checked autocomplete="off"> Dev
+  </label>
+</div>
+  <!-- <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Metodo de treinamento</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Curso</a>
+      <a class="dropdown-item" href="#">Supervisor</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div role="separator" class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+  <input type="text" class="form-control" aria-label="Numero de horas">
+<input type="text" class="form-control" aria-label="quem vai dar">
+      <input type="checkbox" aria-label="Onbaording?">
+
+
+</div> -->
+</div>  
+ </div>
+ <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">Mais info
+</button>
+<div id="collapseBasic" [collapse]="isCollapsed"> 
+ <div class="row">
+ <table class="table col-md-6">
+  <thead>
+    <th>Meio social esperado</th> 
+    <th>Quantidade</th>
+    <th>Grau de</th>
+  </thead>
+  <tbody>
+    <tr >
+      <td>Chefes</td>
+      <td>  
+    <div class="form-group ">
+      <input type="text" formControlName="numbboss" id="numbboss" class="form-control" >
+    </div>
+    </td>
+      <td>
+        <div class="form-group ">
+                <label for="title" class="control-label">Autonomia</label>
+      <input type="range" formControlName="bosslevel" id="bosslevel" min="0" max="6" class="custom-range"> 
+ </div>
+
+      </td>
+    </tr>
+    <tr >
+      <td>Peers</td>
+      <td>  
+    <div class="form-group ">
+      <input type="text" formControlName="numbpeer" id="numbpeer" class="form-control" >
+    </div>
+    </td>
+      <td>
+        <div class="form-group ">
+            <label for="title" class="control-label">Cooperacao</label>
+      <input type="range" formControlName="peerlevel" id="peerlevel" min="0" max="6" class="custom-range"> 
+ </div>
+
+      </td>
+    </tr>
+    <tr >
+      <td>Subordinados</td>
+      <td>  
+    <div class="form-group ">
+      <input type="text" formControlName="numbsub" id="numbsub" class="form-control" >
+    </div>
+    </td>
+      <td>
+        <div class="form-group ">
+           <label for="title" class="control-label">delegacao</label>
+      <input type="range" formControlName="sublevel" id="sublevel" min="0" max="6" class="custom-range"> 
+ </div>
+
+      </td>
+    
+    </tr>
+    <tr >
+      <td>Ele</td>
+      <td>  
+  <div class="form-group ">
+        <label for="title" class="control-label">Melhor ou pior que os peers workhorse?</label>
+      <input type="range" formControlName="selfquailitylevel" id="selfquailitylevel" min="0" max="6" class="custom-range"> 
+ </div>
+    </td>
+      <td>
+   <div class="form-group ">
+        <label for="title" class="control-label">autodirigismo esperado</label>
+      <input type="range" formControlName= "selfleveldirigism" id=" selfleveldirigism" min="0" max="6" class="custom-range"> 
+ </div>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="form-group">
+    <label for="Conquista">Conquista:resultado esperado, exectativa de goal</label>
+    <textarea formControlName= "conquest"class="form-control" id="Conquista" rows="5"></textarea>
+  </div>
+ </div>
+ </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-success">Salvar</button>
+    </div>
+  </div>
+  <pre>{{ form.value | json }}</pre>
+</form>
+ 
+ 

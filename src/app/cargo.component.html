@@ -1,0 +1,141 @@
+<table class="table">
+  <thead>
+    <th>ID</th>
+    <th>Título</th>
+    <th>Ações</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cargo of cargo">
+      <td>{{ cargo.id }}</td>
+      <td>{{ cargo.title }}</td>
+      <td>
+        <button class="btn btn-info">Detalhes</button>
+        <button class="btn btn-danger">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>Cargo:</h1>
+
+<form [formGroup]="form" (ngSubmit)="updateTask()">
+  <div class="row">
+    <div class="form-group col-md-4">
+      <label for="title" class="control-label">Cargo</label>
+      <input
+       [typeahead]="cargos"
+       formControlName="cargos"
+       class="form-control">
+    </div>
+     </div>
+ <div class="row">
+    <div class="form-group col-md-4">
+      <label for="title" class="control-label">Setor(optional)</label>
+     <input
+       [typeahead]="setor"
+       formControlName="setor"
+       class="form-control">
+    </div>
+
+     <div class="form-group col-md-4">
+      <label for="title" class="control-label">Empresa</label>
+      <input 
+       [typeahead]="empresa"
+       formControlName="empresa"
+       class="form-control">
+    </div>
+
+   
+  <div class="col-xs-12 col-4 col-md-4 form-group">
+     <label for="deadline" class="control-label">Data de Entrada</label>
+    <input type="text"
+           placeholder="Datepicker"
+           class="form-control"
+           bsDatepicker>
+</div>
+  <div class="col-xs-12 col-4 col-md-4 form-group">
+     <label for="deadline" class="control-label">Data de Saida</label>
+    <input type="text"
+           placeholder="Datepicker"
+           class="form-control"
+           bsDatepicker>
+  </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-success">Salvar</button>
+    </div>
+  </div>
+</form> 
+<p>
+  
+</p>
+<p>
+
+<!-- </p>
+  <div class="row">
+    <div class="form-group col-md-4">
+      <label for="title" class="control-label">Tarefa</label>
+      <input type="text" formControlName="title" id="title" class="form-control">
+    </div>
+
+     <div class="form-group col-md-4">
+      <label for="title" class="control-label">horas por dia, % do tempo, vezes semana, mes, ano (select option,e ai poem o valor qu quer)</label>
+      <input type="option" formControlName="title" id="title" class="form-control">
+    </div>
+    
+    <div class="form-group col-md-1">
+      <label for="deadline" class="control-label">Produtividade, x tasks por dia/hora/mes. ele escolhe a metrica dele, tentar entender grau de difculdade ou ele define</label>
+      <input type="text" formControlName="deadline" id="deadline" class="form-control">
+    </div>
+      
+    <div class="form-group col-md-1">
+      <label for="deadline" class="control-label">Conquistas,resultados campo aberto, oprtional</label>
+      <input type="text" formControlName="deadline" id="deadline" class="form-control">
+    </div>
+
+ <div class="form-group col-md-1">
+      <label for="deadline" class="control-label">mando bem/mal (ranking do mando+botaozinho pra treinar isso)(estrela e capeta, limite por quantidade de atividades so pode 3 coisas)</label>
+      <input type="text" formControlName="deadline" id="deadline" class="form-control">
+    </div>
+
+ <div class="form-group col-md-1">
+      <label for="deadline" class="control-label">Gosto / n gosto (slider?)</label>
+      <input type="text" formControlName="deadline" id="deadline" class="form-control">
+    </div>
+
+    <div class="form-group col-md-1">
+      <label for="deadline" class="control-label">Gostaria de fazer mais/menos isso/(estrela e capeta)optional</label>
+      <input type="text" formControlName="deadline" id="deadline" class="form-control">
+    </div>
+
+<div class="form-group col-md-1">
+      <label for="deadline" class="control-label">Gostariad e desenvolver mais essa competencia, as isso ta na lista de entrads.pq? maestria, carreira, vida pessoal, paixao(realizacao pessoal/ego) l</label>
+      <input type="text" formControlName="deadline" id="deadline" class="form-control">
+    </div>
+
+<div class="form-group col-md-1">
+      <label for="deadline" class="control-label">Quantos peers, sub e patroes, obrigatorio na conquista</label>
+      <input type="text" formControlName="deadline" id="deadline" class="form-control">
+    </div>
+<div class="form-group col-md-1">
+      <label for="deadline" class="control-label">grao de autonomia que teve nela de 0 a 100(via patrao), grau de delegacao (via sub) , grau de solitarioou de cooperacao com peers </label>
+      <input type="text" formControlName="deadline" id="deadline" class="form-control">
+    </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-success">Salvar</button>
+    </div>
+  </div>
+</div>
+ -->
+
+<!-- icone, clicon new form, send pasado -->
+
+
+<h1>Detalhes da Tarefa:</h1>
+
+<div class="container">
+    <tarefa></tarefa>
+</div> 

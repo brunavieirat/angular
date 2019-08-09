@@ -1,0 +1,219 @@
+<form [formGroup]="form" (ngSubmit)="updateTask()">
+<div class="row">
+<div class="form-group form-check col-md-3">
+    <input type="checkbox" class="form-check-input" formControlName="moreorless" id="moreorless">
+    <label for="moreorless" class="form-check-label">Gostaria de fazer mais/menos</label>
+  </div>  
+
+
+<div class="btn-group-toggle col-md-3" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="checkbox" checked autocomplete="off"> Dev
+  </label>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Dev
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Avançar carreira</a>
+    <a class="dropdown-item" href="#">Quero usar pra vida</a>
+    <a class="dropdown-item" href="#">calling</a>
+    <a class="dropdown-item" href="#">ruim, n tem talento mas quer melhorar </a>
+  </div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-group form-check col-md-3">
+    <input type="checkbox" class="form-check-input" formControlName="topskill" id="topskill">
+    <label for="topskill" class="form-check-label">Top skill</label>
+  </div>  
+
+</div>
+  <div class="row">
+    <div class="form-group col-md-5">
+      <label for="title" class="control-label">Tarefa</label>
+      <input 
+       [typeahead]="tarefa"
+       formControlName="tarefa"
+       class="form-control">
+    </div>
+  <!-- formControlName="title" -->
+<!-- if valide intocavel vira readonly, valid se vier depois de selecionado do dropdown -->
+
+<div class="input-group col-md-3  ">
+    <div class="input-group-prepend">
+      <label for="title" class="control-label">Tempo</label>
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" 
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">horas por dia</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Horas por Dia</a>
+        <a class="dropdown-item" href="#">% do tempo</a>
+        <a class="dropdown-item" href="#">vezes semana</a>
+        <a class="dropdown-item" href="#">vezes mes</a>
+        <a class="dropdown-item" href="#">vezes ano</a>
+      </div>
+    </div>
+    <input 
+    formControlName="tempo"
+    type="text" class="form-control col-md-1 " aria-label="Text input with dropdown button">
+</div>
+
+<div class="input-group col-md-3">
+  <label for="title" class="control-label">Produtividade</label>
+  <input 
+  formControlName="produtividade"
+  type="text" class="form-control col-md-1" aria-label="Text input with dropdown button">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary dropdown-toggle"
+    type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Escolher</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Tasks por dia</a>
+      <a class="dropdown-item" href="#">Tasks por hora</a>
+      <a class="dropdown-item" href="#">Tasks por semana</a>
+      <a class="dropdown-item" href="#">Tasks por mes<</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- </div>
+     <div class="form-group col-md-4">
+      <label for="title" class="control-label">horas por dia, % do tempo, vezes semana, mes, ano (select option,e ai poem o valor qu quer)</label>
+      <input type="option" formControlName="title" id="title" class="form-control">
+    </div> -->
+<!--     
+    <div class="form-group col-md-1">
+      <label for="deadline" class="control-label">Produtividade, x tasks por dia/hora/mes. ele escolhe a metrica dele, tentar entender grau de difculdade ou ele define</label>
+      <input type="text" formControlName="deadline" id="deadline" class="form-control">
+    </div> -->
+    
+ <!-- <div class="form-group col-md-1">
+      <label for="deadline" class="control-label">mando bem/mal (ranking do mando+botaozinho pra treinar isso)(estrela e capeta, limite por quantidade de atividades so pode 3 coisas)</label>
+      <input type="text" formControlName="deadline" id="deadline" class="form-control">
+    </div> -->
+
+<div class="row">M
+ <div class="form-group ">
+      <label for="likedeslike" class="control-label">Gosto / n gosto </label>
+      <input type="range" formControlName="likenolike" id="likedeslike" min="0" max="6" class="custom-range"> 
+ </div>
+
+ <div class="form-group ">
+      <label for="likedeslike" class="control-label">Mando bem/Mal</label>
+      <input type="range" formControlName="goodngood" id="likedeslike" min="0" max="6" class="custom-range"> 
+ </div>
+ </div>
+  <!-- // mais/menos isso/(estrela e capeta)optional// -->
+
+<!-- <div class="form-group col-md-1">
+      <label for="deadline" class="control-label">Gostariad e desenvolver mais essa competencia, as isso ta na lista de entrads.pq? maestria, carreira, vida pessoal, paixao(realizacao pessoal/ego) devbuttonabriu ele aperecemodal pra escolher qual dos tiposl</label>
+      <input type="text" formControlName="deadline" id="deadline" class="form-control">
+    </div> -->
+
+<!-- <div class="form-group col-md-1">
+      <label for="deadline" class="control-label">Quantos peers, sub e patroes, obrigatorio na conquista</label>
+      <input type="text" formControlName="deadline" id="deadline" class="form-control">
+    </div>
+<div class="form-group col-md-1">
+      <label for="deadline" class="control-label">grao de autonomia que teve nela de 0 a 100(via patrao), grau de delegacao (via sub) , grau de solitarioou de cooperacao com peers </label>
+      <input type="text" formControlName="deadline" id="deadline" class="form-control">
+    </div> -->
+<button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">Mais info
+</button>    
+<div id="collapseBasic" [collapse]="isCollapsed">
+ <div class="row">
+<table class="table col-md-7">
+  <thead>
+    <th></th> 
+    <th>Quantidade</th>
+    <th>Grau de</th>
+  </thead>
+  <tbody>
+    <tr >
+      <td>Chefes</td>
+      <td>  
+    <div class="form-group ">
+      <input type="text" formControlName="numbboss" id="numbboss" class="form-control" >
+    </div>
+    </td>
+      <td>
+        <div class="form-group ">
+                <label for="title" class="control-label">Autonomia</label>
+      <input type="range" formControlName="bosslevel" id="bosslevel" min="0" max="6" class="custom-range"> 
+ </div>
+
+      </td>
+    </tr>
+    <tr >
+      <td>Peers</td>
+      <td>  
+    <div class="form-group ">
+      <input type="text" formControlName="peerlevel" id="peerlevel" class="form-control" >
+    </div>
+    </td>
+      <td>
+        <div class="form-group ">
+            <label for="title" class="control-label">Cooperação</label>
+      <input type="range" formControlName="numbpeer" id="numbpeer" min="0" max="6" class="custom-range"> 
+ </div>
+
+      </td>
+    </tr>
+    <tr >
+      <td>Subordinados</td>
+      <td>  
+    <div class="form-group ">
+      <input type="text" formControlName="numsub" id="title" class="form-control" >
+    </div>
+    </td>
+      <td>
+        <div class="form-group ">
+           <label for="title" class="control-label">Delegação</label>
+      <input type="range" formControlName="sublevel" id="sublevel" min="0" max="6" class="custom-range"> 
+ </div>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="form-group col-md-5">
+    <label for="Conquista">Conquista/resultado</label>
+    <textarea 
+    formControlName="conquest"
+    class="form-control" id="Conquista" rows="5"></textarea>
+  </div>
+</div>
+ </div>
+
+ <div class="row"> 
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-success">Salvar</button>
+    </div>
+  </div>
+  </div>  
+</form>

@@ -1,0 +1,111 @@
+<h1> Objetivo de vida no emprego </h1>
+ <div class="row">
+ <div class="col"> Nao tenho interesse  </div>
+ <div class="col"> Mudar ja!   </div>
+ <div class="col"> To bem mas aceito olhar  </div>
+ <div class="col"> second job for me!   </div>
+</div>
+<div class="form-group ">
+      <input type="range" [(ngModel)]="lifez"formControlName="lifegoal" id="lifegoal" class="custom-range" min="0" max="3" step="1"> 
+ </div>
+<!-- {{life.{{lifegoal.value}}.title}} -->
+  <pre>{{ states | json }}</pre>
+
+<div class="jumbotron">
+  <h1 class="display-12"> To bem mas aceito olhar {{LIFE.title}} </h1>
+  <p class="lead">to bem mas aceito outro trabalho se tiver algo que atinge melhor minhas metas do que o que estou agora ou olhando para algo que comece daqui uns 3/6 meses</p>
+</div>
+<br>
+ <div class="row">
+ <div class="col">
+<h2> Metas esse ano </h2>
+ 
+<button type="button" class="btn btn-primary" (click)="isCollapsedhj = !isCollapsedhj" [attr.aria-expanded]="!isCollapsedhj" aria-controls="collapseBasic">Setar Metas
+</button>
+<hr>
+<div id="collapseBasic" [collapse]="isCollapsedhj">
+<metas></metas>
+</div>
+<!-- ja setado a primeira linha do form e tudo que ja tiver sido preenchido vem completado -->
+
+<!-- metas titulo eh o nome do tipo da meta, botao pra editar ela, tudo colapsado emfechado em tijilos que rankea, dentro do muito importante ou nao,clicanela abre as especificidades  -->
+
+
+<div *ngFor="let cargo of cargo"class="card " style="">
+  <h5 class="card-header"> 
+    {{ metashj.title }} 
+  </h5>
+  <div class="card-body">
+    <h5 class="card-title">{{ cargo.id }}</h5>
+    <p class="card-text">{{ metahj.value }}<p> </p>
+    <button class="btn btn-primary ">Editar</button>  
+    <button class="btn btn-danger">Excluir</button>
+  </div>
+</div>
+</div>
+ <div class="col-4">
+<h2> Metas em 5 anos </h2>
+ 
+<!-- metas titulo eh o nome do tipo da meta, botao pra editar ela, tudo colapsado emfechado em tijilos que rankea, dentro do muito importante ou nao,clicanela abre as especificidades  -->
+
+<button type="button" class="btn btn-primary" (click)="isCollapsed5 = !isCollapsed5" [attr.aria-expanded]="!isCollapsed5" aria-controls="collapseBasic">Setar Metas
+</button>
+<hr>
+<div id="collapseBasic5" [collapse]="isCollapsed5">
+<metas></metas>
+</div>
+<div *ngFor="let cargo of cargo"class="card " style="">
+  <h5 class="card-header"> 
+    {{ cargo.title }} 
+  </h5>
+  <div class="card-body">
+    <h5 class="card-title">{{ cargo.id }}</h5>
+    <p class="card-text">{{ cargo.title }} <p> </p>
+    <button class="btn btn-primary ">Editar</button>  
+    <button class="btn btn-danger">Excluir</button>
+  </div>
+</div>
+
+</div>
+ <div class="col-4">
+<h2> Metas Second Job </h2>
+<button type="button" class="btn btn-primary" (click)="isCollapsed2nd = !isCollapsed2nd" [attr.aria-expanded]="!isCollapsed2nd" aria-controls="collapseBasic">Setar Metas
+</button>
+<hr>
+<div id="collapseBasic" [collapse]="isCollapsed2nd">
+<metas></metas>
+</div>
+<div *ngFor="let metashj of metashj"class="card " style="">
+  <h5 class="card-header"> 
+    {{ cargo.title }} 
+   </h5>
+  <div class="card-body">
+    <h5 class="card-title">{{ cargo.id }}</h5>
+    <p class="card-text">{{ cargo.title }}<p> </p>
+    <button class="btn btn-primary ">Editar</button>  
+    <button class="btn btn-danger">Excluir</button>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+<h1> Propostas de trabalho </h1>
+<!-- listagem de porpostas de trabalho-->
+<div *ngFor="let cargo of cargo"class="card bg" style="">
+  <!-- cor muda de eh job primaria ou secundario -->
+  <h5 class="card-header"> 
+    {{ cargo.title }} 
+    95% Afinidade, x metas novas, fase q esta:   
+    <button class="btn btn-primary ">Fazer Teste</button>
+    <button class="btn btn-success">Aceitar Convite</button>
+     Data reuniao: 22/5 as 23:00</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{ cargo.id }}</h5>
+    <p class="card-text">{{ cargo.title }}, mensgame de rejeicao caso nao passe fica vermelho e sipa dao feedback, abre caixa pra fazer feedback se interessado</p>
+    <button class="btn btn-primary ">Fazer Teste</button>
+    <button class="btn btn-success">Aceitar Convite</button>
+    <button class="btn btn-danger">Rejeitar</button>
+  </div>
+</div>
